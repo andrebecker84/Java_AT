@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Font Awesome CDN link -->
+		<title>Cafeteria Virtual Premium</title>
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			html,body{
+				/* background: linear-gradient(315deg, #fff 0%, #dee4eb 74%); */
+				width: 100%;
+				display: grid;
+				place-items: center;
+			}
+			
+			body {
+	            margin: 0;
+	            padding: 0;
+	            font-family: Arial, sans-serif; /* Fonte padrão para o texto */
+	            height: 100vh; /* Define a altura do corpo para preencher toda a altura da janela do navegador */
+	            position: relative; /* Define a posição como relativa para poder posicionar o pseudo-elemento */
+        	}
+
+	        body::before {
+	            content: "";
+	            position: absolute;
+	            top: 0;
+	            left: 0;
+	            width: 100%;
+	            height: 100%;
+	            background-image: url("https://img.freepik.com/fotos-gratis/vista-superior-da-xicara-de-cafe-com-espaco-de-copia_23-2148255048.jpg");
+	            background-size: cover; /* Cobrir toda a tela */
+	            background-position: center;
+	            background-repeat: no-repeat;
+	            filter: grayscale(60%) blur(3px); /* Aplica escala de cinza e um leve desfoque */
+    			opacity: 0.5; /* Reduz a opacidade para suavizar */
+	            z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo */
+	        }
+			
+			.footer{
+				background: #666;
+			}
+			
+			.socials{
+				margin: 10px;
+				width: 100%;
+				height: 100%;
+				display: flex;
+            	justify-content: center;
+            	align-items: center;
+			}
+			
+			.wrapper .button{
+				display: flex;
+				align-items: center;
+				width: 40px;
+				height: 40px;
+				float: left;
+				margin: 0 5px;
+				background: white;
+				border-radius: 30px;
+				box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+				overflow: hidden;
+				cursor: pointer;
+				transition: all 0.3s ease-out;
+			}
+			
+			.wrapper .button:hover .icon{
+				color: white;
+			}
+			
+			.wrapper .button:nth-child(1):hover .icon{
+				background: #4267b2;
+			}
+			
+			.wrapper .button:nth-child(2):hover .icon{
+				background: #e1306c;
+			}
+			
+			.wrapper .button:nth-child(3):hover .icon{
+				background: #1da1f2;
+			}
+			
+			.wrapper .button:nth-child(4):hover .icon{
+				background: #05a354;
+			}
+			
+			.wrapper .button .icon{
+				display: flex;
+            	align-items: center;
+            	justify-content: center;
+				width: 40px;
+				height: 40px;
+				border-radius: 30px;
+				line-height: 40px;
+				text-align: center;
+				transition: all 0.3s ease-out;
+			}
+			
+			.wrapper .button .icon i{
+				text-align: center;
+				font-size: 15px;
+				width: 40px;
+				transition: all 0.3s ease-out;
+			}
+			
+			.wrapper .button span{
+				font-size: 15px;
+				font-weight: 500;
+				margin-left: 20px;
+				display: inline-block;
+            	vertical-align: middle;
+			}
+			
+			.wrapper .button:hover{
+				width: 150px;
+			}
+			
+			.wrapper .button:nth-child(1):hover span{
+				color: #4267b2;
+			}
+			
+			.wrapper .button:nth-child(2):hover span{
+				color: #e1306c;
+			}
+			
+			.wrapper .button:nth-child(3):hover span{
+				color: #1da1f2;
+			}
+			
+			.wrapper .button:nth-child(4):hover span{
+				color: #05a354;
+			}
+			
+			a { 
+   				color: currentColor;
+			} 
+			
+			.navbar-brand span {
+   				color: red; /* Cor vermelha */
+    			text-shadow: 0 0 10px #ff8080, 0 0 20px #ff8080, 0 0 30px #ff8080, 0 0 40px #ff8080, 0 0 70px #ff8080, 0 0 80px #ff8080, 0 0 100px #ff8080, 0 0 150px #ff8080;
+    			animation: neon-glow 1.5s ease-in-out infinite alternate;
+			}
+
+			@keyframes neon-glow {
+    			0% {
+       				text-shadow: 0 0 10px #ff8080, 0 0 20px #ff8080, 0 0 30px #ff8080, 0 0 40px #ff8080, 0 0 70px #ff8080, 0 0 80px #ff8080, 0 0 100px #ff8080, 0 0 150px #ff8080;
+   				}
+    			100% {
+        			text-shadow: none;
+    			}
+			}
+			
+			.cafe img {
+            	width: 700px; /* Largura da imagem */
+            	height: auto; /* Altura ajustável para manter a proporção */
+            	object-fit: cover; /* Redimensiona a imagem para cobrir o contêiner */
+       		}
+
+	        .cafe {
+    	        position: absolute; /* Posição absoluta */
+        	    bottom: 50px; /* Distância do fundo */
+            	right: 0px; /* Distância da direita */
+			}
+		</style>
+	</head>
+		
+	<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#"><span><i class="fa-solid fa-mug-saucer"></i> Café&Tabaco <i class="fa-brands fa-envira"></i></span></a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="/"><i class="fa-solid fa-house"></i> Início</a></li>
+	      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa-solid fa-store"></i> Lojas <span class="caret"></span></a>
+	        <ul class="dropdown-menu">
+	          <li><a href="#"><i class="fa-solid fa-store"></i> Loja</a></li>
+	          <li><a href="/funcionario/lista"><i class="fa-solid fa-user-tie"></i> Funcionários</a></li>
+	        </ul>
+	      </li>
+	            
+	      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa-solid fa-cubes-stacked"></i> Produtos <span class="caret"></span></a>
+	        <ul class="dropdown-menu">
+	          <li><a href="#"><i class="fa-solid fa-bag-shopping"></i> Produto</a></li>
+	          <li><a href="#"><i class="fa-solid fa-mug-hot"></i> Café</a></li>
+	          <li><a href="#"><i class="fa-solid fa-leaf"></i> Tabaco</a></li>
+	        </ul>
+	      </li>
+	      
+	      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa-solid fa-barcode"></i> Compras <span class="caret"></span></a>
+	        <ul class="dropdown-menu">
+	          <li><a href="#"><i class="fa-solid fa-receipt"></i> Pedido</a></li>
+	          <li><a href="#"><i class="fa-solid fa-dollar-sign"></i> Pagamento</a></li>
+	          <li><a href="#"><i class="fa-solid fa-truck-fast"></i> Entrega</a></li>
+	        </ul>
+	      </li>
+	      
+	      <li><a href="/usuario"><i class="fa-solid fa-users"></i> Usuários</a></li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><a href="#"><i class="fa-solid fa-user-plus"></i> Inscrever-se</a></li>
+	      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	    </ul>
+	    <a href="#" class="btn btn-danger navbar-btn"><i class="fa-solid fa-paper-plane"></i> Contato</a>
+	  </div>
+	</nav>
+	  
+	<div class="container">
+	  <h3><i class="fa-solid fa-mug-saucer"></i> Café&Tabaco <i class="fa-brands fa-envira"></i></h3>
+	  <p>Aqui você toma café até ficar doidão!</p>
+	</div>
+	
+	<div class="cafe">
+		<img src="https://banner2.cleanpng.com/20171216/c59/coffee-beans-png-image-5a35e74f09b2a0.9709816915134820630397.jpg" alt="logomarca coffee">	
+	</div>
+	
+	  
+
+	<footer>
+		<nav class="footer navbar-fixed-bottom">
+		    <div class="socials">
+			    <div class="wrapper">
+				   	   	<div class="button">
+					    	<div class="icon">
+					    		<i class="fa-brands fa-facebook-f"></i>
+					    	</div>
+					    	<a href="https://www.facebook.com/" target="_blank">
+					    		<span>Facebook</span>
+					    	</a>
+					    </div>
+				    
+					    <div class="button">
+					    	<div class="icon">
+					    		<i class="fa-brands fa-instagram"></i>
+					    	</div>
+					    	<a href="https://www.instagram.com/" target="_blank">
+					    		<span>Instagram</span>
+					    	</a>
+					    </div>
+				    
+					    <div class="button">
+					    	<div class="icon">
+					    		<i class="fa-brands fa-x-twitter"></i>
+					    	</div>
+					    	 <a href="https://twitter.com/" target="_blank">
+					    	 	<span>Twitter</span>
+					    	 </a>
+					    </div>
+				    
+					    <div class="button">
+					    	<div class="icon">
+					    		<i class="fa-brands fa-whatsapp"></i>
+					    	</div>
+					    	<a href="https://www.whatsapp.com/" target="_blank">
+					    		<span>WhatsApp</span>
+					    	</a>
+					    </div>
+				</div>
+			</div>
+	    </nav>
+	</footer>
+	
+	</body>
+	
+</html>
