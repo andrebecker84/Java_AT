@@ -12,7 +12,7 @@
 <p align="center">PROF.: ELBERTH LINS COSTA DE MORAES</p>
 <br><br>
 
-# Projeto de Gerenciamento de Academias
+# Projeto Cafeteria Virtual Premium
 
 ## Introdução
 
