@@ -1,4 +1,4 @@
-package cafeteria.model;
+package cafeteria.model.domain;
 
 public class ProdutoCafe extends Produto {
 

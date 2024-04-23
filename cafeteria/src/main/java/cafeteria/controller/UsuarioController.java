@@ -1,6 +1,6 @@
 package cafeteria.controller;
 
-import cafeteria.model.Usuario;
+import cafeteria.model.domain.Usuario;
 import spark.Request;
 import spark.Response;
 import spark.Route;

@@ -21,8 +21,8 @@ public class App {
         // Funcionário:
     	// Configuração de Rotas para o Contexto (GET, POST, DELETE)
     		get("/funcionario/lista", FuncionarioController.obterLista);
-    		post("/funcionario/incluir", FuncionarioController.incluir);
-    		delete("/funcionario/:id/excluir", FuncionarioController.excluir);
+    		get("/funcionario/:nome/incluir", FuncionarioController.incluir); //depois voltar pra `post` pra usar com o POSTMAN, no browser deverá ser usado `get` pra conseguir testar.
+    		get("/funcionario/:id/excluir", FuncionarioController.excluir); //depois voltar pra `delete` pra usar com o POSTMAN, no browser deverá ser usado `get` pra conseguir testar.
     		get("/funcionario/:id", FuncionarioController.obterPorId);
         
         
